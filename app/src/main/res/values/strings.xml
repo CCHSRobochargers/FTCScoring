@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FTC Scoring</string>
+
+    <string name="zero_score">Score: 0</string>
+
+    <string name="auto_heading">Autonomous</string>
+
+    <string name="corner_part">Corner Particles</string>
+    <string name="center_part">Center Particles</string>
+    <string name="beacons">Beacons</string>
+    <string name="corner_park">Corner Parked</string>
+    <string name="center_park">Center Parked</string>
+    <string name="cap_ball_hit">Cap Ball Off</string>
+
+    <string name="teleop_heading">TeleOp</string>
+
+    <string name="cap_ball">Cap Ball</string>
+
+    <string name="up1">+1</string>
+    <string name="down1">-1</string>
+</resources>
