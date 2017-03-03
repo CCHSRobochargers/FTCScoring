@@ -55,7 +55,6 @@
                 android:textStyle="bold"
                 android:textAlignment="center"/>
 
-
             <RelativeLayout>
                 <Button
                     android:id="@+id/auto_corner_down1"
@@ -68,7 +67,7 @@
                     android:id="@+id/auto_corner_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"/>
+                    android:layout_centerInParent="true"/>
 
                 <Button
                     android:id="@+id/auto_corner_up1"
@@ -95,7 +94,7 @@
                     android:id="@+id/auto_center_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAlignment="center"/>
+                    android:layout_centerInParent="true"/>
 
                 <Button
                     android:id="@+id/auto_center_up1"
@@ -110,57 +109,232 @@
                 android:textStyle="bold"
                 android:textAlignment="center"/>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/corner_park"
-                    android:textStyle="bold"/>
-            </TableRow>
+            <RelativeLayout>
+                <ToggleButton
+                    android:id="@+id/auto_beacon_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:textOn="@string/pressed"
+                    android:textOff="@string/not_pressed"
+                    android:layout_alignParentStart="true"/>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/center_park"
-                    android:textStyle="bold"/>
-            </TableRow>
+                <ToggleButton
+                    android:id="@+id/auto_beacon_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:textOn="@string/pressed"
+                    android:textOff="@string/not_pressed"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/cap_ball_hit"
-                    android:textStyle="bold"/>
-            </TableRow>
+            <TextView
+                android:text="@string/corner_park"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
 
-            <TableRow
-                android:background="@color/colorPrimary">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="@string/teleop_heading"
-                    android:textColor="@color/colorBlack"
-                    android:textStyle="bold"/>
-            </TableRow>
+            <RelativeLayout>
+                <CheckBox
+                    android:id="@+id/auto_corner_np"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_parked"
+                    android:checked="true"
+                    android:layout_alignParentStart="true"/>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/corner_part"
-                    android:textStyle="bold"/>
-            </TableRow>
+                <CheckBox
+                    android:id="@+id/auto_corner_pp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/half_parked"
+                    android:checked="false"
+                    android:layout_centerInParent="true" />
 
-            <TableRow>
-                <TextView
-                    android:text="@string/center_part"
-                    android:textStyle="bold"/>
-            </TableRow>
+                <CheckBox
+                    android:id="@+id/auto_corner_fp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_parked"
+                    android:checked="false"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
 
-            <TableRow>
-                <TextView
-                    android:text="@string/beacons"
-                    android:textStyle="bold"/>
-            </TableRow>
+            <TextView
+                android:text="@string/center_park"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
 
-            <TableRow>
+            <RelativeLayout>
+                <CheckBox
+                    android:id="@+id/auto_center_np"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_parked"
+                    android:checked="true"
+                    android:layout_alignParentStart="true"/>
+
+                <CheckBox
+                    android:id="@+id/auto_center_pp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/half_parked"
+                    android:checked="false"
+                    android:layout_centerInParent="true" />
+
+                <CheckBox
+                    android:id="@+id/auto_center_fp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/full_parked"
+                    android:checked="false"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:text="@string/cap_ball"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <RelativeLayout>
+                <ToggleButton
+                    android:id="@+id/cap_ball"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:layout_centerInParent="true"/>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/colorPrimary"
+                android:text="@string/teleop_heading"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:text="@string/corner_part"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <RelativeLayout>
+                <Button
+                    android:id="@+id/teleop_corner_down1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/down1"/>
+
                 <TextView
-                    android:text="@string/cap_ball"
-                    android:textStyle="bold"/>
-            </TableRow>
+                    android:id="@+id/teleop_corner_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+
+                <Button
+                    android:id="@+id/teleop_corner_up1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/up1"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:text="@string/center_part"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <RelativeLayout>
+                <Button
+                    android:id="@+id/teleop_center_down1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/down1"/>
+
+                <TextView
+                    android:id="@+id/teleop_center_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+
+                <Button
+                    android:id="@+id/teleop_center_up1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/up1"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:text="@string/beacons"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <RelativeLayout>
+                <Button
+                    android:id="@+id/teleop_beacons_down1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:text="@string/down1"/>
+
+                <TextView
+                    android:id="@+id/teleop_beacons_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"/>
+
+                <Button
+                    android:id="@+id/teleop_beacons_up1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/up1"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+
+            <TextView
+                android:text="@string/cap_ball"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+
+            <RelativeLayout>
+                <CheckBox
+                    android:id="@+id/teleop_capball_nr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/not_raised"
+                    android:checked="true"
+                    android:layout_alignParentStart="true"/>
+
+                <CheckBox
+                    android:id="@+id/teleop_capball_lr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/raised_little"
+                    android:checked="false"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout>
+                <CheckBox
+                    android:id="@+id/teleop_capball_mr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/raised_more"
+                    android:checked="false"
+                    android:layout_alignParentStart="true"/>
+
+                <CheckBox
+                    android:id="@+id/teleop_capball_cp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/capped"
+                    android:checked="false"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
         </TableLayout>
 
     </ScrollView>
