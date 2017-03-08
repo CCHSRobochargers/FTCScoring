@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FTC Puntacion</string>
+    <string name="score">Resultado:</string>
+    <string name="auto_heading">Autonomous</string>
+    <string name="beacons">Faros</string>
+    <string name="cap_ball">Pelota Grande</string>
+    <string name="capped">Tapó</string>
+    <string name="center_part">Pelotas en Centro</string>
+    <string name="corner_part">Pelotas en Esquina</string>
+    <string name="down1">-1</string>
+    <string name="up1">+1</string>
+    <string name="zero_score">0</string>
+    <string name="full_parked">Enteramente</string>
+    <string name="half_parked">Medio</string>
+    <string name="menu_about">Sobre la Aplicacion</string>
+    <string name="menu_exit">Salir</string>
+    <string name="not_parked">No</string>
+    <string name="not_pressed">No fue empujado</string>
+    <string name="not_raised">No se levanto</string>
+    <string name="pressed">Fue empujado</string>
+    <string name="raised_little">Levantodo menos de 76 cm</string>
+    <string name="raised_more">Levanto mas de 76 cm</string>
+    <string name="teleop_heading">Controlado por el hombre</string>
+    <string name="back">Volver</string>
+    <string name="center_park">Estacionó en Centro</string>
+    <string name="corner_park">Estacionó en Esquina</string>
+    <string name="note">"Atención: La app va a actualizar por el partido de el próximo año "</string>
+    <string name="about_person">Alec DeVries</string>
+    <string name="about_team">FTC 4507 Robochargers</string>
+    <string name="about_by">El Creador:</string>
+</resources>

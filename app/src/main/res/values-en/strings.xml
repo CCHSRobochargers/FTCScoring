@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FTC Scoring</string>
+    <string name="auto_heading">Autonomous</string>
+    <string name="beacons">Beacons</string>
+    <string name="cap_ball">Cap Ball</string>
+    <string name="capped">Capped</string>
+    <string name="center_park">Center Parked</string>
+    <string name="center_part">Center Particles</string>
+    <string name="corner_park">Corner Parked</string>
+    <string name="corner_part">Corner Particles</string>
+    <string name="down1">-1</string>
+    <string name="full_parked">Fully</string>
+    <string name="half_parked">Half</string>
+    <string name="menu_about">About</string>
+    <string name="menu_exit">Exit</string>
+    <string name="not_parked">Not</string>
+    <string name="not_pressed">Not pressed</string>
+    <string name="not_raised">Not raised</string>
+    <string name="pressed">Pressed</string>
+    <string name="raised_little">Raised under 30\"</string>
+    <string name="raised_more">Raised over 30\"</string>
+    <string name="score">Score:</string>
+    <string name="teleop_heading">TeleOp</string>
+    <string name="up1">+1</string>
+    <string name="zero_score">0</string>
+    <string name="back">Back</string>
+    <string name="note">Note: App will be updated for next year\'s game</string>
+    <string name="about_team">FTC 4507 Robochargers</string>
+    <string name="about_person">Alec DeVries</string>
+    <string name="about_by">Created By:</string>
+</resources>

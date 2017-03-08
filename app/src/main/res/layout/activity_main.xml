@@ -4,6 +4,10 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingStart="@dimen/horizontal_padding"
+    android:paddingEnd="@dimen/horizontal_padding"
+    android:paddingTop="@dimen/vertical_padding"
+    android:paddingBottom="@dimen/vertical_padding"
     tools:context="org.robochargers.ftcscoring.MainActivity">
 
     <RelativeLayout
@@ -13,16 +17,35 @@
         android:background="@color/colorBlack">
 
         <TextView
-            android:id="@+id/total_score"
-            android:text="@string/zero_score"
+            android:id="@+id/score_head"
+            android:text="@string/score"
             android:textColor="@color/colorWhite"
-            android:textSize="20sp"
+            android:textSize="@dimen/score_text_size"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
+        <TextView
+            android:id="@+id/total_score"
+            android:text="@string/zero_score"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/score_text_size"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:layout_toEndOf="@id/score_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
         <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toStartOf="@+id/menu"
+            android:src="@drawable/reset"
+            android:onClick="resetGame"/>
+
+        <ImageButton
+            android:id="@+id/menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -42,17 +65,19 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 android:text="@string/auto_heading"
                 android:textColor="@color/colorBlack"
                 android:textStyle="bold"
+                android:textSize="@dimen/heading_text_size"
                 android:textAlignment="center"/>
 
 
             <TextView
                 android:text="@string/corner_part"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -61,25 +86,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/down1"/>
+                    android:text="@string/down1"
+                    android:textSize="@dimen/button_text_size"/>
 
                 <TextView
                     android:id="@+id/auto_corner_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/children_text_size"/>
 
                 <Button
                     android:id="@+id/auto_corner_up1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/up1"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <TextView
                 android:text="@string/center_part"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -88,25 +117,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/down1"/>
+                    android:text="@string/down1"
+                    android:textSize="@dimen/button_text_size"/>
 
                 <TextView
                     android:id="@+id/auto_center_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/children_text_size"/>
 
                 <Button
                     android:id="@+id/auto_center_up1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/up1"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <TextView
                 android:text="@string/beacons"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -117,6 +150,7 @@
                     android:checked="false"
                     android:textOn="@string/pressed"
                     android:textOff="@string/not_pressed"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentStart="true"/>
 
                 <ToggleButton
@@ -126,12 +160,14 @@
                     android:checked="false"
                     android:textOn="@string/pressed"
                     android:textOff="@string/not_pressed"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true"/>
             </RelativeLayout>
 
             <TextView
                 android:text="@string/corner_park"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -140,6 +176,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/not_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="true"
                     android:layout_alignParentStart="true"/>
 
@@ -148,6 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/half_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
                     android:layout_centerInParent="true" />
 
@@ -156,6 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/full_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
                     android:layout_alignParentEnd="true"/>
             </RelativeLayout>
@@ -163,6 +202,7 @@
             <TextView
                 android:text="@string/center_park"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -171,6 +211,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/not_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="true"
                     android:layout_alignParentStart="true"/>
 
@@ -179,6 +220,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/half_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
                     android:layout_centerInParent="true" />
 
@@ -187,6 +229,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/full_parked"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
                     android:layout_alignParentEnd="true"/>
             </RelativeLayout>
@@ -194,6 +237,7 @@
             <TextView
                 android:text="@string/cap_ball"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -201,22 +245,25 @@
                     android:id="@+id/cap_ball"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="@dimen/button_text_size"
                     android:checked="true"
                     android:layout_centerInParent="true"/>
             </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
                 android:background="@color/colorPrimary"
                 android:text="@string/teleop_heading"
                 android:textColor="@color/colorBlack"
                 android:textStyle="bold"
+                android:textSize="@dimen/heading_text_size"
                 android:textAlignment="center"/>
 
             <TextView
                 android:text="@string/corner_part"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -225,25 +272,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/down1"/>
+                    android:text="@string/down1"
+                    android:textSize="@dimen/button_text_size"/>
 
                 <TextView
                     android:id="@+id/teleop_corner_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/children_text_size"/>
 
                 <Button
                     android:id="@+id/teleop_corner_up1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/up1"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <TextView
                 android:text="@string/center_part"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -252,25 +303,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/down1"/>
+                    android:text="@string/down1"
+                    android:textSize="@dimen/button_text_size"/>
 
                 <TextView
                     android:id="@+id/teleop_center_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/children_text_size"/>
 
                 <Button
                     android:id="@+id/teleop_center_up1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/up1"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <TextView
                 android:text="@string/beacons"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -279,25 +334,29 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
-                    android:text="@string/down1"/>
+                    android:text="@string/down1"
+                    android:textSize="@dimen/button_text_size"/>
 
                 <TextView
                     android:id="@+id/teleop_beacons_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"/>
+                    android:layout_centerInParent="true"
+                    android:textSize="@dimen/children_text_size"/>
 
                 <Button
                     android:id="@+id/teleop_beacons_up1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/up1"
+                    android:textSize="@dimen/button_text_size"
                     android:layout_alignParentEnd="true" />
             </RelativeLayout>
 
             <TextView
                 android:text="@string/cap_ball"
                 android:textStyle="bold"
+                android:textSize="@dimen/subheading_text_size"
                 android:textAlignment="center"/>
 
             <RelativeLayout>
@@ -306,6 +365,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/not_raised"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="true"
                     android:layout_alignParentStart="true"/>
 
@@ -314,17 +374,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/raised_little"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
-                    android:layout_alignParentEnd="true"/>
-            </RelativeLayout>
+                    android:layout_below="@id/teleop_capball_nr"
+                    android:layout_alignParentStart="true"/>
 
-            <RelativeLayout>
                 <CheckBox
                     android:id="@+id/teleop_capball_mr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/raised_more"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
+                    android:layout_below="@id/teleop_capball_lr"
                     android:layout_alignParentStart="true"/>
 
                 <CheckBox
@@ -332,8 +394,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/capped"
+                    android:textSize="@dimen/checkbox_text_size"
                     android:checked="false"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_below="@id/teleop_capball_mr"
+                    android:layout_alignParentStart="true"/>
             </RelativeLayout>
         </TableLayout>
 

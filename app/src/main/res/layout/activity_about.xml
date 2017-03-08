@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_about"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/horizontal_padding"
+    android:paddingEnd="@dimen/horizontal_padding"
+    android:paddingTop="@dimen/vertical_padding"
+    android:paddingBottom="@dimen/vertical_padding"
+    tools:context="org.robochargers.ftcscoring.AboutActivity">
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBlack">
+
+        <Button
+            android:text="@string/back"
+            android:textSize="@dimen/button_text_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:onClick="onGoBack"/>
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_below="@id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_by"
+            android:textSize="@dimen/heading_text_size"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_team"
+            android:textSize="@dimen/subheading_text_size" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/about_person"
+            android:textSize="@dimen/subheading_text_size"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/note"
+            android:textSize="@dimen/subheading_text_size"/>
+    </TableLayout>
+
+</RelativeLayout>
