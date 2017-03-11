@@ -29,4 +29,8 @@
     <string name="about_person">Alec DeVries</string>
     <string name="about_team">FTC 4507 Robochargers</string>
     <string name="about_by">El Creador:</string>
+    <string name="major">Grande</string>
+    <string name="minor">Pequeno</string>
+    <string name="penalty_heading">Castigos</string>
+    <string name="penalties_head">Pequeno:</string>
 </resources>

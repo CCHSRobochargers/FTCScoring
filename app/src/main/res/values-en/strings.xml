@@ -29,4 +29,8 @@
     <string name="about_team">FTC 4507 Robochargers</string>
     <string name="about_person">Alec DeVries</string>
     <string name="about_by">Created By:</string>
+    <string name="penalty_heading">Penalties</string>
+    <string name="major">Major</string>
+    <string name="minor">Minor</string>
+    <string name="penalties_head">Penalties:</string>
 </resources>

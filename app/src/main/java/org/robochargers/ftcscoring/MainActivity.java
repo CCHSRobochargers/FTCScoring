@@ -20,6 +20,9 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     TextView ScoreView;
     int score = 0;
 
+    TextView PenaltiesView;
+    int penalties = 0;
+
     Button AutoCornerParticlesMinus;
     TextView AutoCornerParticlesView;
     int AutoCornerParticlesNum = 0;
@@ -66,6 +69,16 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     CheckBox TeleopCapBallCapped;
     int capballScore = 0;
 
+    Button PenaltiesMinorMinus;
+    TextView PenaltiesMinorView;
+    int PenaltiesMinorNum = 0;
+    Button PenaltiesMinorPlus;
+
+    Button PenaltiesMajorMinus;
+    TextView PenaltiesMajorView;
+    int PenaltiesMajorNum = 0;
+    Button PenaltiesMajorPlus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,6 +92,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         mainScreen.setBackgroundColor(getResources().getColor(R.color.backgroundTint));
 
         ScoreView = (TextView) findViewById(R.id.total_score);
+        PenaltiesView = (TextView) findViewById(R.id.total_penalties);
 
         AutoCornerParticlesMinus = (Button) findViewById(R.id.auto_corner_down1);
         AutoCornerParticlesView = (TextView) findViewById(R.id.auto_corner_number);
@@ -406,6 +420,56 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
             }
         });
 
+        PenaltiesMinorPlus = (Button) findViewById(R.id.penalties_minor_up1);
+        PenaltiesMinorView = (TextView) findViewById(R.id.penalties_minor_number);
+        PenaltiesMinorMinus = (Button) findViewById(R.id.penalties_minor_down1);
+
+        PenaltiesMinorMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PenaltiesMinorNum > 0) {
+                    PenaltiesMinorNum--;
+                    PenaltiesMinorView.setText(String.valueOf(PenaltiesMinorNum));
+                    penalties -= 10;
+                    PenaltiesView.setText(String.valueOf(penalties));
+                }
+            }
+        });
+        PenaltiesMinorPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PenaltiesMinorNum++;
+                PenaltiesMinorView.setText(String.valueOf(PenaltiesMinorNum));
+                penalties += 10;
+                PenaltiesView.setText(String.valueOf(penalties));
+            }
+        });
+
+        PenaltiesMajorPlus = (Button) findViewById(R.id.penalties_major_up1);
+        PenaltiesMajorView = (TextView) findViewById(R.id.penalties_major_number);
+        PenaltiesMajorMinus = (Button) findViewById(R.id.penalties_major_down1);
+
+        PenaltiesMajorMinus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (PenaltiesMajorNum > 0) {
+                    PenaltiesMajorNum--;
+                    PenaltiesMajorView.setText(String.valueOf(PenaltiesMajorNum));
+                    penalties -= 40;
+                    PenaltiesView.setText(String.valueOf(penalties));
+                }
+            }
+        });
+        PenaltiesMajorPlus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                PenaltiesMajorNum++;
+                PenaltiesMajorView.setText(String.valueOf(PenaltiesMajorNum));
+                penalties += 40;
+                PenaltiesView.setText(String.valueOf(penalties));
+            }
+        });
+
         reset();
     }
 
@@ -445,6 +509,8 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         TeleopCenterParticlesNum = 0;
         BeaconNum = 0;
         capballScore = 0;
+        PenaltiesMinorNum = 0;
+        PenaltiesMajorNum = 0;
 
         AutoCornerParticlesView.setText("0");
         AutoCenterParticlesView.setText("0");
@@ -464,8 +530,13 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         TeleopCapBallLittleRaised.setChecked(false);
         TeleopCapBallLotRaised.setChecked(false);
         TeleopCapBallCapped.setChecked(false);
+        PenaltiesMinorView.setText("0");
+        PenaltiesMajorView.setText("0");
+
 
         score = 0;
         ScoreView.setText("0");
+        penalties = 0;
+        PenaltiesView.setText("0");
     }
 }
