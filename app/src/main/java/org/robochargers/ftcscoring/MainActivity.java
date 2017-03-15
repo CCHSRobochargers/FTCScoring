@@ -33,8 +33,10 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     int AutoCenterParticlesNum = 0;
     Button AutoCenterParticlesPlus;
 
-    ToggleButton AutoBeacon1;
-    ToggleButton AutoBeacon2;
+    Button AutoBeaconsMinus;
+    TextView AutoBeaconsView;
+    int AutoBeaconsNum = 0;
+    Button AutoBeaconsPlus;
 
     CheckBox AutoCornerParkedNot;
     CheckBox AutoCornerParkedPart;
@@ -144,30 +146,30 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
             }
         });
 
-        AutoBeacon1 = (ToggleButton) findViewById(R.id.auto_beacon_1);
-        AutoBeacon2 = (ToggleButton) findViewById(R.id.auto_beacon_2);
+        AutoBeaconsMinus = (Button) findViewById(R.id.auto_beacons_down1);
+        AutoBeaconsView = (TextView) findViewById(R.id.auto_beacons_number);
+        AutoBeaconsPlus = (Button) findViewById(R.id.auto_beacons_up1);
 
-        AutoBeacon1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoBeaconsMinus.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    score += 30;
-                } else {
+            public void onClick(View v) {
+                if (AutoBeaconsNum > 0) {
+                    AutoBeaconsNum--;
+                    AutoBeaconsView.setText(String.valueOf(AutoBeaconsNum));
                     score -= 30;
+                    ScoreView.setText(String.valueOf(score));
                 }
-                ScoreView.setText(String.valueOf(score));
             }
         });
-
-        AutoBeacon2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoBeaconsPlus.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoBeaconsNum < 4) {
+                    AutoBeaconsNum++;
+                    AutoBeaconsView.setText(String.valueOf(AutoBeaconsNum));
                     score += 30;
-                } else {
-                    score -= 30;
+                    ScoreView.setText(String.valueOf(score));
                 }
-                ScoreView.setText(String.valueOf(score));
             }
         });
 
@@ -175,44 +177,50 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         AutoCornerParkedPart = (CheckBox) findViewById(R.id.auto_corner_pp);
         AutoCornerParkedFull = (CheckBox) findViewById(R.id.auto_corner_fp);
 
-        AutoCornerParkedNot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCornerParkedNot.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCornerParkedNot.isChecked()) {
                     AutoCornerParkedPart.setChecked(false);
                     AutoCornerParkedFull.setChecked(false);
                     score -= cornerParkedScore;
                     cornerParkedScore = 0;
                     score += cornerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCornerParkedNot.setChecked(true);
                 }
             }
         });
 
-        AutoCornerParkedPart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCornerParkedPart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCornerParkedPart.isChecked()) {
                     AutoCornerParkedNot.setChecked(false);
                     AutoCornerParkedFull.setChecked(false);
                     score -= cornerParkedScore;
                     cornerParkedScore = 5;
                     score += cornerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCornerParkedPart.setChecked(true);
                 }
             }
         });
 
-        AutoCornerParkedFull.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCornerParkedFull.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCornerParkedFull.isChecked()) {
                     AutoCornerParkedNot.setChecked(false);
                     AutoCornerParkedPart.setChecked(false);
                     score -= cornerParkedScore;
                     cornerParkedScore = 10;
                     score += cornerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCornerParkedFull.setChecked(true);
                 }
             }
         });
@@ -221,44 +229,50 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         AutoCenterParkedPart = (CheckBox) findViewById(R.id.auto_center_pp);
         AutoCenterParkedFull = (CheckBox) findViewById(R.id.auto_center_fp);
 
-        AutoCenterParkedNot.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCenterParkedNot.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCenterParkedNot.isChecked()) {
                     AutoCenterParkedPart.setChecked(false);
                     AutoCenterParkedFull.setChecked(false);
                     score -= centerParkedScore;
                     centerParkedScore = 0;
                     score += centerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCenterParkedNot.setChecked(true);
                 }
             }
         });
 
-        AutoCenterParkedPart.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCenterParkedPart.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCenterParkedPart.isChecked()) {
                     AutoCenterParkedNot.setChecked(false);
                     AutoCenterParkedFull.setChecked(false);
                     score -= centerParkedScore;
                     centerParkedScore = 5;
                     score += centerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCenterParkedPart.setChecked(true);
                 }
             }
         });
 
-        AutoCenterParkedFull.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        AutoCenterParkedFull.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (AutoCenterParkedFull.isChecked()) {
                     AutoCenterParkedNot.setChecked(false);
                     AutoCenterParkedPart.setChecked(false);
                     score -= centerParkedScore;
                     centerParkedScore = 10;
                     score += centerParkedScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    AutoCenterParkedFull.setChecked(true);
                 }
             }
         });
@@ -360,10 +374,10 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
         TeleopCapBallLotRaised = (CheckBox) findViewById(R.id.teleop_capball_mr);
         TeleopCapBallCapped = (CheckBox) findViewById(R.id.teleop_capball_cp);
 
-        TeleopCapBallNotRaised.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        TeleopCapBallNotRaised.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (TeleopCapBallNotRaised.isChecked()) {
                     TeleopCapBallLittleRaised.setChecked(false);
                     TeleopCapBallLotRaised.setChecked(false);
                     TeleopCapBallCapped.setChecked(false);
@@ -371,14 +385,16 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
                     capballScore = 0;
                     score += capballScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    TeleopCapBallNotRaised.setChecked(true);
                 }
             }
         });
 
-        TeleopCapBallLittleRaised.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        TeleopCapBallLittleRaised.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (TeleopCapBallLittleRaised.isChecked()) {
                     TeleopCapBallNotRaised.setChecked(false);
                     TeleopCapBallLotRaised.setChecked(false);
                     TeleopCapBallCapped.setChecked(false);
@@ -386,14 +402,16 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
                     capballScore = 10;
                     score += capballScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    TeleopCapBallLittleRaised.setChecked(true);
                 }
             }
         });
 
-        TeleopCapBallLotRaised.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        TeleopCapBallLotRaised.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (TeleopCapBallLotRaised.isChecked()) {
                     TeleopCapBallNotRaised.setChecked(false);
                     TeleopCapBallLittleRaised.setChecked(false);
                     TeleopCapBallCapped.setChecked(false);
@@ -401,14 +419,16 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
                     capballScore = 20;
                     score += capballScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    TeleopCapBallLotRaised.setChecked(true);
                 }
             }
         });
 
-        TeleopCapBallCapped.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        TeleopCapBallCapped.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
+            public void onClick(View v) {
+                if (TeleopCapBallCapped.isChecked()) {
                     TeleopCapBallNotRaised.setChecked(false);
                     TeleopCapBallLittleRaised.setChecked(false);
                     TeleopCapBallLotRaised.setChecked(false);
@@ -416,6 +436,8 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
                     capballScore = 40;
                     score += capballScore;
                     ScoreView.setText(String.valueOf(score));
+                } else {
+                    TeleopCapBallCapped.setChecked(true);
                 }
             }
         });
@@ -503,6 +525,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
     public void reset() {
         AutoCornerParticlesNum = 0;
         AutoCenterParticlesNum = 0;
+        AutoBeaconsNum = 0;
         cornerParkedScore = 0;
         centerParkedScore = 0;
         TeleopCornerParticlesNum = 0;
@@ -514,8 +537,7 @@ public class MainActivity extends Activity implements PopupMenu.OnMenuItemClickL
 
         AutoCornerParticlesView.setText("0");
         AutoCenterParticlesView.setText("0");
-        AutoBeacon1.setChecked(false);
-        AutoBeacon2.setChecked(false);
+        AutoBeaconsView.setText("0");
         AutoCornerParkedNot.setChecked(true);
         AutoCornerParkedPart.setChecked(false);
         AutoCornerParkedFull.setChecked(false);
